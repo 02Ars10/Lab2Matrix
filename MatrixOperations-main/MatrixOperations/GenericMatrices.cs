@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MatrixOperations
 {
-    public class GenericMatrix<T>
+    public class GenericMatrix<T> 
           where T : struct
     {
         protected T[,] ArrayOfT;
@@ -22,7 +22,7 @@ namespace MatrixOperations
             ArrayOfT = new T[Row, Column];
 
         }
-        public GenericMatrix(int row, int column,Func <int,int, T> func)
+        public GenericMatrix(int row, int column,Func <int,int, T> func)// у нас квадратная мерная матрица, мы можем передавать 1 тип, чтобы сделать её квадратной
         {
             if (typeof(T) != typeof(int) && typeof(T) != typeof(double) && typeof(T) != typeof(float))
             {
